@@ -3,11 +3,12 @@ exports.seed = function(knex) {
     {
       project_name: "Database Sprint Challenge",
       project_description:
-        "Node/Express Week 2 Sprint Challenge for Lambda School"
+        "Node/Express Week 2 Sprint Challenge for Lambda School",
+      completed: 0
     }, // id 1 will be generated
     {
       project_name: "PowerPoint Presentation",
-      completed: "True"
+      completed: 1
     }, //id  2
     {
       project_name: "Write an Essay",

@@ -21,8 +21,14 @@ router.get("/:id", (request, response) => {
 
   Projects.getProjectById(id)
     .then(project => {
+      console.log(project);
+      const projectCompletedBoolean = {
+        ...project,
+        completed: project.completed === 1 ? true : false
+      };
+
       if (project) {
-        response.json(project);
+        response.json(projectCompletedBoolean);
       } else {
         response
           .status(404)
@@ -33,6 +39,7 @@ router.get("/:id", (request, response) => {
       response.status(500).json({ message: "Failed to get project " });
     });
 });
+
 // POST to 6000/api/projects
 router.post("/", (request, response) => {
   const projectData = request.body;

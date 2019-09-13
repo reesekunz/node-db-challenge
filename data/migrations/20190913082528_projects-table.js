@@ -9,7 +9,8 @@ exports.up = function(knex) {
           .unique()
           .notNullable();
         column.text("project_description", 500);
-        column.boolean("completed");
+        column.boolean("completed")
+        // .defaultTo("false")
       })
 
       // Creating Taks Table
