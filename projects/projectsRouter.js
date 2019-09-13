@@ -88,4 +88,23 @@ router.delete("/:id", (request, response) => {
     });
 });
 
+// GET to 6000/api/projects/:id/tasks
+// router.get("/:id/tasks", (request, response) => {
+//   const { id } = request.params;
+
+//   Projects.getProjectTasks(id)
+//     .then(projectTask => {
+//       if (projectTask.length) {
+//         response.json(projectTask);
+//       } else {
+//         response
+//           .status(404)
+//           .json({ message: "Could not find tasks for given project" });
+//       }
+//     })
+//     .catch(error => {
+//       response.status(500).json({ message: "Failed to get project tasks" });
+//     });
+// });
+
 module.exports = router;

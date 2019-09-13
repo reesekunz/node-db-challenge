@@ -32,10 +32,28 @@ function deleteProject(id) {
     .del();
 }
 
+// using getProjectTasks() helper for GET to /:id/tasks in projects router
+// The list of tasks should include the project name and project description.
+// function getProjectTasks(id) {
+//   return db("tasks")
+//     .join("projects", "project.id", "=", "tasks.project_id")
+
+//     .where({ project_id: id })
+//     .select(
+//       "projects.project_name",
+//       "project.project_description",
+//       "tasks.task_description"
+//     )
+//     .then(projectTasks => {
+//       return projectTasks;
+//     });
+// }
+
 module.exports = {
   getProjects,
   getProjectById,
   addProject,
   updateProject,
   deleteProject
+  //   getProjectTasks
 };
