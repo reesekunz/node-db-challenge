@@ -23,8 +23,8 @@ exports.up = function(knex) {
           .inTable("projects")
           .onDelete("CASCADE")
           .onUpdate("CASCADE");
-        column.text("description", 500).notNullable;
-        conlumn.text("notes", 500);
+        column.text("task_description", 500).notNullable;
+        column.text("notes", 500);
         column.boolean("completed");
       })
 
@@ -63,8 +63,8 @@ exports.up = function(knex) {
 
 exports.down = function(knex) {
   return knex.schema
-    .dropTableifExists("project_resources")
-    .dropTableifExists("resources")
-    .dropTableifExists("tasks")
-    .dropTableifExists("projects");
+    .dropTableIfExists("project_resources")
+    .dropTableIfExists("resources")
+    .dropTableIfExists("tasks")
+    .dropTableIfExists("projects");
 };
